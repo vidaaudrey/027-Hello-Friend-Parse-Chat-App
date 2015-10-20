@@ -15,5 +15,6 @@
 [![snapshot1][]][snapshot1]
 
 [snapshot]:https://raw.githubusercontent.com/vidaaudrey/028-Hello-Friend-Parse-Chat-App/master/_snapshot/snapshot0.gif
+[snapshot]:https://raw.githubusercontent.com/vidaaudrey/028-Hello-Friend-Parse-Chat-App/master/_snapshot/snapshot1.gif
 [snapshot1]: https://raw.githubusercontent.com/vidaaudrey/028-Hello-Friend-Parse-Chat-App/master/_snapshot/snapshot.gif
 
