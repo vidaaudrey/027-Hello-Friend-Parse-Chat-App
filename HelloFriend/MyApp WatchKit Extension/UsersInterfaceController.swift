@@ -21,7 +21,7 @@ class UsersInterfaceController: WKInterfaceController {
         table.setHidden(false)
         table.setNumberOfRows(users.count, withRowType: WKConfig.TableRowType)
         for (index, dataItem) in enumerate(users){
-            let row = table.rowControllerAtIndex(index) as TableRowController
+            let row = table.rowControllerAtIndex(index) as! TableRowController
             row.cellLabel.setText(dataItem)
         }
     }

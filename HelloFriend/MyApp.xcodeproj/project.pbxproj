@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7614267B1B24A8AE0027DF30 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614267A1B24A8AE0027DF30 /* UserTableViewController.swift */; };
 		763CDC541B127EB400C64341 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CDC531B127EB300C64341 /* FriendsViewController.swift */; };
 		763CDC561B150A3A00C64341 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CDC551B150A3A00C64341 /* FriendTableViewCell.swift */; };
 		764576A51B117E5900493DAC /* UsersInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764576A41B117E5900493DAC /* UsersInterfaceController.swift */; };
@@ -46,6 +47,7 @@
 		76758D471B1124FC009F9AF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76758D461B1124FC009F9AF1 /* MainViewController.swift */; };
 		76758D491B112530009F9AF1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76758D481B112530009F9AF1 /* Utils.swift */; };
 		76758D4B1B112C74009F9AF1 /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76758D4A1B112C74009F9AF1 /* TableRowController.swift */; };
+		767BA6921B156598008E2826 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767BA6911B156598008E2826 /* LogViewController.swift */; };
 		767D65761B11988600DF6F21 /* MessageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D65751B11988600DF6F21 /* MessageInterfaceController.swift */; };
 		76F345A01B15384C0015852D /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3459F1B15384C0015852D /* FriendListViewController.swift */; };
 		76F345A21B153F600015852D /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F345A11B153F600015852D /* FriendListTableViewCell.swift */; };
@@ -90,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7614267A1B24A8AE0027DF30 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		763CDC531B127EB300C64341 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		763CDC551B150A3A00C64341 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		764576A41B117E5900493DAC /* UsersInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersInterfaceController.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 		76758D461B1124FC009F9AF1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		76758D481B112530009F9AF1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		76758D4A1B112C74009F9AF1 /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableRowController.swift; path = "../../../0 My Code Base/MyCommonCode/TableRowController.swift"; sourceTree = "<group>"; };
+		767BA6911B156598008E2826 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		767D65751B11988600DF6F21 /* MessageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInterfaceController.swift; sourceTree = "<group>"; };
 		76F3459F1B15384C0015852D /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		76F345A11B153F600015852D /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				766AF7971B1101100053BF70 /* Main.storyboard */,
+				7614267A1B24A8AE0027DF30 /* UserTableViewController.swift */,
 				766AF7951B1101100053BF70 /* LoginViewController.swift */,
 				763CDC531B127EB300C64341 /* FriendsViewController.swift */,
 				76F3459F1B15384C0015852D /* FriendListViewController.swift */,
@@ -328,6 +333,7 @@
 		76F3459E1B15357E0015852D /* TempTestingRef */ = {
 			isa = PBXGroup;
 			children = (
+				767BA6911B156598008E2826 /* LogViewController.swift */,
 				76758D461B1124FC009F9AF1 /* MainViewController.swift */,
 			);
 			name = TempTestingRef;
@@ -412,6 +418,7 @@
 		766AF7861B1101100053BF70 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = shomigo.com;
 				TargetAttributes = {
@@ -499,10 +506,12 @@
 			files = (
 				76F345A01B15384C0015852D /* FriendListViewController.swift in Sources */,
 				763CDC561B150A3A00C64341 /* FriendTableViewCell.swift in Sources */,
+				7614267B1B24A8AE0027DF30 /* UserTableViewController.swift in Sources */,
 				763CDC541B127EB400C64341 /* FriendsViewController.swift in Sources */,
 				76758D471B1124FC009F9AF1 /* MainViewController.swift in Sources */,
 				7659A30E1B126DD8009B0BFD /* MesageTableViewCell.swift in Sources */,
 				766AF7961B1101100053BF70 /* LoginViewController.swift in Sources */,
+				767BA6921B156598008E2826 /* LogViewController.swift in Sources */,
 				766AF7941B1101100053BF70 /* AppDelegate.swift in Sources */,
 				76F345A21B153F600015852D /* FriendListTableViewCell.swift in Sources */,
 				76758D491B112530009F9AF1 /* Utils.swift in Sources */,

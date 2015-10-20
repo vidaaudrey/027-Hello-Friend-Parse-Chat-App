@@ -46,7 +46,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
                     query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                         println("got the last message \(objects)")
                         if error == nil && objects?.count > 0 {
-                            let newOnlineMessage = objects![0] as PFObject
+                            let newOnlineMessage = objects![0] as! PFObject
                              self.messages.append(newMessage)
                         } else {
                             println("failed to retrieve message")
@@ -62,10 +62,6 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        newMessageField.resignFirstResponder()
-    }
-    
     
     //TableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,12 +70,12 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
-        if message["from"]! as String == PFUser.currentUser()!.username! {
-            let cell: MesageRightTableViewCell = tableView.dequeueReusableCellWithIdentifier(AppConfig.MessageRightCellIdentifier, forIndexPath: indexPath) as MesageRightTableViewCell
+        if message["from"]! as! String == PFUser.currentUser()!.username! {
+            let cell: MesageRightTableViewCell = tableView.dequeueReusableCellWithIdentifier(AppConfig.MessageRightCellIdentifier, forIndexPath: indexPath) as! MesageRightTableViewCell
             cell.configCell(message)
             return cell
         } else {
-            let cell:MesageTableViewCell = tableView.dequeueReusableCellWithIdentifier(AppConfig.MessageLeftCellIdentifier, forIndexPath: indexPath) as MesageTableViewCell
+            let cell:MesageTableViewCell = tableView.dequeueReusableCellWithIdentifier(AppConfig.MessageLeftCellIdentifier, forIndexPath: indexPath) as! MesageTableViewCell
             cell.configCell(message)
             return cell
         }
@@ -118,7 +114,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil && objects != nil {
                 for object in objects! {
-                    messages.append(object as PFObject)
+                    messages.append(object as! PFObject)
                 }
                 self.messages = messages
             }

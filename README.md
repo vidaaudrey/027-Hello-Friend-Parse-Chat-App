@@ -14,6 +14,6 @@
 
 [![snapshot1][]][snapshot1]
 
-[snapshot]: http://audreyli.me/wp-content/uploads/2015/05/snapshot4.gif
-[snapshot1]: http://audreyli.me/wp-content/uploads/2015/05/snapshot11.gif
+[snapshot]:https://raw.githubusercontent.com/vidaaudrey/028-Hello-Friend-Parse-Chat-App/master/_snapshot/snapshot0.gif
+[snapshot1]: https://raw.githubusercontent.com/vidaaudrey/028-Hello-Friend-Parse-Chat-App/master/_snapshot/snapshot.gif
 

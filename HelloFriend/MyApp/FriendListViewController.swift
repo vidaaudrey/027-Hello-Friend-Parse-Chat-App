@@ -34,11 +34,11 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     func getAllUsers(){
         var users:[PFUser] = []
         var query = PFUser.query()
-        query.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+        query!.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
+        query!.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil && objects?.count > 0 {
                 for object in objects! {
-                    users.append(object as PFUser)
+                    users.append(object as! PFUser)
                 }
                 self.users = users
             }
@@ -51,7 +51,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let user = users[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier(AppConfig.FriendListCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(AppConfig.FriendListCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         cell.textLabel?.text = user.username
         println(user.username)
         return cell

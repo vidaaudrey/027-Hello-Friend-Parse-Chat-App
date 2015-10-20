@@ -59,10 +59,10 @@ class MainViewController: UIViewController {
         }
     }
     func updatePhraseFields(){
-        p1Field.text = phrases["phrase1"] as String
-        p2Field.text = phrases["phrase2"] as String
-        p3Field.text = phrases["phrase3"] as String
-        p4Field.text = phrases["phrase4"] as String
+        p1Field.text = phrases["phrase1"] as! String
+        p2Field.text = phrases["phrase2"] as! String
+        p3Field.text = phrases["phrase3"] as! String
+        p4Field.text = phrases["phrase4"] as! String
     }
     
     
@@ -75,8 +75,8 @@ class MainViewController: UIViewController {
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil && objects?.count > 0 {
                 if let newestMessage = objects![0] as? PFObject {
-                    let from:String = newestMessage["from"]! as String
-                    let content:String = newestMessage["content"]! as String
+                    let from:String = newestMessage["from"]! as! String
+                    let content:String = newestMessage["content"]! as! String
                     let formater = NSDateFormatter()
                     let dateStr = formater.stringFromDate(newestMessage.createdAt!)
                     let createdAt:String = dateStr

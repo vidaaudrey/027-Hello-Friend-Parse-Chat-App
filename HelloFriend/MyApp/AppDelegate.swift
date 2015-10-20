@@ -251,8 +251,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                             if error == nil && objects?.count > 0 {
                                 if let newestMessage = objects![0] as? PFObject {
-                                    let from:String = newestMessage["from"]! as String
-                                    let content:String = newestMessage["content"]! as String
+                                    let from:String = newestMessage["from"]! as! String
+                                    let content:String = newestMessage["content"]! as! String
                                     
                                     let formater = NSDateFormatter()
                                     let dateStr = formater.stringFromDate(newestMessage.createdAt!)

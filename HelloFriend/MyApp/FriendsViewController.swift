@@ -31,6 +31,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
             tableView.delegate = self
         }
         
+        
+        
     }
     override func viewWillAppear(animated: Bool) {
         getAllMessages()
@@ -38,8 +40,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let dvc = segue.destinationViewController as? MessageViewController {
             let currentUserName = PFUser.currentUser()!.username!
-            let fromUserName = selectedMessage!["from"] as String
-            let toUserName = selectedMessage!["to"] as String
+            let fromUserName = selectedMessage!["from"] as! String
+            let toUserName = selectedMessage!["to"] as! String
             println("going to \(fromUserName) and \(toUserName) page now")
             dvc.currentFriend = currentUserName == fromUserName ? toUserName : fromUserName
         }
@@ -51,7 +53,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
-        let cell: FriendTableViewCell = tableView.dequeueReusableCellWithIdentifier(AppConfig.FriendCellIdentifier, forIndexPath: indexPath) as FriendTableViewCell
+        let cell: FriendTableViewCell = tableView.dequeueReusableCellWithIdentifier(AppConfig.FriendCellIdentifier, forIndexPath: indexPath) as! FriendTableViewCell
         cell.configCell(message)
         return cell
     }
@@ -76,13 +78,13 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         var query = PFQuery(className: "Messages", predicate: predicate)
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if error == nil && objects.count > 0 {
+            if error == nil && objects!.count > 0 {
                 for object in objects! {
-                    let message = object as PFObject
+                    let message = object as! PFObject
                     // as Parse doesn't support unique query, we have to manually process here. 
                     // Only save unique users to the messages list
-                    let fromUserName = message["from"]! as String
-                    let toUserName = message["to"]! as String
+                    let fromUserName = message["from"]! as! String
+                    let toUserName = message["to"]! as! String
                     
                     if !uniqueUsersSet.containsObject(fromUserName) && !uniqueUsersSet.containsObject(toUserName) {
                         messages.append(message)

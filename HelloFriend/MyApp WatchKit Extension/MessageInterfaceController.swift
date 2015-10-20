@@ -39,7 +39,7 @@ class MessageInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
        
         // we already did pre-check, so we can safely use casting
-        let infoDict:[String: String] = context as [String: String]
+        let infoDict:[String: String] = context as! [String: String]
         fromLabel.setText("From: " + infoDict["from"]!)
         messageLabel.setText(infoDict["content"]! + " " + infoDict["createdAt"]!)
         objectId = infoDict["objectId"]!
